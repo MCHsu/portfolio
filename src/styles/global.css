@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/noto-sans";
+@import "@fontsource-variable/lexend-exa";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Font Families */
+  --font-sans: "Noto Sans Variable", system-ui, sans-serif;
+  --font-heading: "Lexend Exa Variable", system-ui, sans-serif;
+
+  /* Brand Tokens */
+  --color-brand-slate: #5a748a;
+  --color-brand-slate-hover: #4a6275;
+
+  /* Semantic Colors (Light Mode) */
+  --color-background: #ffffff;
+  --color-foreground: #3e3e3e;
+  --color-card: #ffffff/80%;
+  --color-card-foreground: #3e3e3e;
+
+  --color-primary: #597285;
+  --color-primary-hover: #4a6275;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: oklch(97% 0 0);
+  --color-secondary-foreground: oklch(20.5% 0 0);
+
+  --color-muted: #f7f7f7;
+  --color-muted-foreground: #737373;
+
+  --color-accent: oklch(86.5% 0.12 186.2);
+  --color-accent-foreground: oklch(14.5% 0 0);
+
+  --color-border: oklch(92.2% 0 0);
+  --color-input: oklch(92.2% 0 0);
+  --color-ring: oklch(70.8% 0 0);
+  --color-ring-offset: oklch(100% 0 0);
+
+  /* Custom Design Tokens / Component Tokens */
+  --color-project-card-border: oklch(100% 0 0 / 10%);
+  --color-project-card-bg-from: oklch(100% 0 0 / 5%);
+  --color-project-card-bg-to: oklch(100% 0 0 / 1%);
+  --color-mouse-glow: oklch(96% 0.06 80 / 40%);
+  --color-surface-subtle: oklch(94.5% 0.008 30);
+  --shadow-card-hover: 0 28px 80px oklch(20% 0.03 250 / 0.12);
+
+  /* Animations & Keyframes */
+  --animate-star-flicker: star-flicker 3s infinite ease-in-out;
+  --animate-star-flicker-slow: star-flicker 4.5s infinite ease-in-out;
+
+  @keyframes star-flicker {
+    0%,
+    100% {
+      opacity: 0.4;
+      transform: scale(0.9) rotate(-3deg);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.05) rotate(3deg);
+    }
+  }
+}
+
+/* Dark mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Dark mode theme overrides */
+.dark {
+  --color-background: #23273d;
+  --color-foreground: oklch(100% 0 0 / 85%);
+
+  --color-card: oklch(100% 0.00011 271.152 / 0.08);
+  --color-card-foreground: oklch(98.5% 0 0);
+
+  --color-primary: oklch(92.2% 0 0);
+  --color-primary-foreground: oklch(20.5% 0 0);
+
+  --color-secondary: oklch(26.9% 0 0);
+  --color-secondary-foreground: oklch(98.5% 0 0);
+
+  --color-muted: oklch(26.9% 0 0);
+  --color-muted-foreground: oklch(70.8% 0 0);
+
+  --color-accent: oklch(86.5% 0.12 186.2);
+  --color-accent-foreground: oklch(20.5% 0 0);
+
+  --color-border: oklch(100% 0 0 / 10%);
+  --color-input: oklch(100% 0 0 / 15%);
+  --color-ring: oklch(55.6% 0 0);
+  --color-ring-offset: oklch(14.5% 0 0);
+  --color-mouse-glow: oklch(86.5% 0.12 186.2 / 8%);
+}
+
+@utility shell {
+  @apply container mx-auto px-6 md:px-16 lg:px-32 xl:px-40;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  html {
+    @apply font-sans;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+  }
+}

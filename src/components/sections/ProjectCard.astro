@@ -1,0 +1,102 @@
+---
+import { type ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  slug: string;
+  githubUrl?: string;
+  demoUrl?: string;
+  cover: ImageMetadata;
+  coverAlt?: string;
+}
+
+const { title, description, tags, slug, githubUrl, demoUrl, cover, coverAlt } =
+  Astro.props;
+const imageAlt = coverAlt ?? `Preview image for ${title}`;
+const primaryHref = demoUrl ?? `/projects/${slug}`;
+const primaryLabel = "Live Demo";
+---
+
+<div
+  class="group flex flex-col gap-8 overflow-hidden rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover dark:border-border/60 lg:flex-row lg:items-center lg:gap-15 lg:rounded-3xl lg:p-[40px_60px]"
+>
+  <div
+    class="order-2 mt-8 flex min-w-0 flex-1 flex-col gap-6 lg:mt-0 lg:gap-7 lg:order-1"
+  >
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-4">
+        <h3
+          class="text-[28px] font-semibold leading-tight tracking-[-0.013em] text-foreground dark:text-card-foreground"
+        >
+          {title}
+        </h3>
+
+        <div class="flex flex-wrap gap-3">
+          {
+            tags.map((tag) => (
+              <Badge key={tag} variant="secondary" className="text-sm">
+                {tag}
+              </Badge>
+            ))
+          }
+        </div>
+      </div>
+
+      <p class="text-lg leading-8 font-medium text-muted-foreground">
+        {description}
+      </p>
+    </div>
+
+    <div class="flex gap-4 w-full">
+      <a href={primaryHref} class="flex-1 sm:flex-none">
+        <Button
+          className="h-12 w-full cursor-pointer px-7 text-lg font-semibold focus-visible:ring-2 focus-visible:ring-brand-slate/30 sm:min-w-40"
+        >
+          {primaryLabel}
+        </Button>
+      </a>
+
+      {
+        githubUrl && (
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 sm:flex-none"
+          >
+            <Button variant="ghost">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+                class="size-6"
+              >
+                <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.38 6.84 9.74.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.38-3.37-1.38-.46-1.2-1.12-1.52-1.12-1.52-.92-.64.07-.63.07-.63 1.02.07 1.56 1.08 1.56 1.08.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.13-4.56-5.06 0-1.12.38-2.03 1.01-2.75-.1-.26-.44-1.31.1-2.73 0 0 .82-.27 2.68 1.05a9.08 9.08 0 0 1 4.87 0c1.86-1.32 2.68-1.05 2.68-1.05.54 1.42.2 2.47.1 2.73.63.72 1.01 1.63 1.01 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.89 0 1.37-.01 2.47-.01 2.81 0 .27.18.59.69.49A10.2 10.2 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
+              </svg>
+              Source
+            </Button>
+          </a>
+        )
+      }
+    </div>
+  </div>
+
+  <div
+    class="order-1 w-full overflow-hidden rounded-xl bg-surface-subtle p-4 dark:bg-muted lg:h-auto lg:w-[38%] lg:shrink-0 lg:rounded-[16px] lg:p-0 lg:order-2"
+  >
+    <Image
+      src={cover}
+      alt={imageAlt}
+      class="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
+      loading="lazy"
+      sizes="(min-width: 1024px) 38vw, 100vw"
+    />
+  </div>
+</div>

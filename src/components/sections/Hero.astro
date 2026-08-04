@@ -1,0 +1,48 @@
+---
+import { Button } from "@/components/ui/button";
+---
+
+<section
+  id="hero"
+  class="relative left-1/2 z-0 flex min-h-[calc(100svh-4rem)] w-screen max-w-[100vw] -translate-x-1/2 flex-col items-center justify-center py-16 md:py-20"
+>
+  <img
+    src="/images/star-white.svg"
+    alt=""
+    class="pointer-events-none absolute top-[28%] left-[6%] z-20 w-5 select-none animate-star-flicker-slow sm:left-[10%] sm:w-6 md:left-[14%] md:w-8 lg:left-[18%]"
+  />
+  <img
+    src="/images/star-white.svg"
+    alt=""
+    class="pointer-events-none absolute top-[36%] right-[6%] z-20 w-4 select-none animate-star-flicker sm:right-[10%] sm:w-5 md:right-[14%] md:w-7 lg:right-[18%]"
+  />
+
+  <div
+    class="relative z-30 mx-auto flex w-full flex-col items-center px-6 text-center sm:px-8"
+  >
+    <h1
+      class="text-4xl leading-tight font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl md:leading-[1.1]"
+    >
+      <span class="block mb-4">Hi, I’m MIN CHIA</span>
+      <span class="block">Frontend Developer</span>
+    </h1>
+    <p
+      class="max-w-sm md:max-w-xl mx-auto mt-6 text-base leading-relaxed font-medium text-foreground/75 sm:text-lg md:mt-8 md:text-xl dark:text-foreground/70"
+    >
+      I am a passionate software engineer focused on modern frontend
+      technologies and user experience design.
+    </p>
+
+    <div class="mt-8 flex w-full justify-center md:mt-10">
+      <a href="#projects">
+        <Button> View my work </Button>
+      </a>
+    </div>
+  </div>
+
+  <img
+    src="/images/hero_bg.svg"
+    alt=""
+    class="pointer-events-none absolute z-10 w-[140vw] max-w-none select-none sm:w-[120vw] md:w-screen dark:opacity-30"
+  />
+</section>

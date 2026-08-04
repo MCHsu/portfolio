@@ -1,0 +1,58 @@
+---
+import { Download } from "lucide-react";
+import ThemeToggle from "@/components/layout/ThemeToggle.astro";
+import { Button } from "@/components/ui/button";
+import { NAV_SECTIONS } from "@/lib/sections";
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+  <div class="shell flex h-16 w-full items-center justify-between">
+    <div class="flex flex-1 justify-start">
+      <a
+        class="flex items-center space-x-2 transition-opacity hover:opacity-80"
+        href="/"
+      >
+        <img
+          src="/images/logo.svg"
+          alt="MINCHIA Logo"
+          class="h-5 w-auto md:h-6"
+        />
+      </a>
+    </div>
+
+    <nav
+      class="hidden items-center justify-center gap-12 text-base font-medium md:flex lg:text-lg"
+    >
+      {
+        NAV_SECTIONS.map((section) => (
+          <a
+            class="text-foreground transition-colors hover:text-muted-foreground dark:text-white/70 dark:hover:text-white"
+            href={`/#${section.id}`}
+          >
+            {section.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <div class="flex flex-1 items-center justify-end gap-4">
+      <a
+        href="https://drive.google.com/file/d/1aDWwoYs4_WJGz3MMGn0ViSYJR9RyCXkB/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Button
+          variant="outline"
+          size="lg"
+          className="font-base focus-visible:ring-2 focus-visible:ring-brand-slate/30 sm:min-w-40"
+        >
+          Resume
+          <Download />
+        </Button>
+      </a>
+      <ThemeToggle />
+    </div>
+  </div>
+</header>

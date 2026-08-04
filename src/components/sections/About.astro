@@ -1,0 +1,133 @@
+---
+import { Blocks, Handshake, Sparkles, Sprout } from "lucide-react";
+import BringCard from "@/components/sections/BringCard.astro";
+import SectionTitle from "@/components/sections/SectionTitle.astro";
+
+const bringItems = [
+  {
+    icon: Sparkles,
+    title: "Product Mindset",
+    description: "Building with users, business, and long-term value in mind.",
+  },
+  {
+    icon: Blocks,
+    title: "Scalable Code",
+    description: "Building systems that are easy to maintain and grow.",
+  },
+  {
+    icon: Handshake,
+    title: "Collaboration",
+    description: "Bridging design, product, and engineering teams.",
+  },
+  {
+    icon: Sprout,
+    title: "Continuous Growth",
+    description:
+      "Always learning new technologies and improving building skills.",
+  },
+];
+---
+
+<section
+  id="about"
+  class="relative w-full bg-transparent px-4 py-16 md:py-24 lg:py-28"
+>
+  <SectionTitle title="About me" className="mb-12 md:mb-20" />
+
+  <div
+    class="mx-auto w-full max-w-4xl rounded-[20px] border border-border/60 bg-card p-8 pt-16 text-card-foreground shadow-2xs md:rounded-[24px] md:p-12 md:pt-24 lg:p-16 lg:py-24"
+  >
+    <div
+      class="mb-12 flex flex-col items-center justify-center gap-8 md:mb-16 md:flex-row md:gap-16 lg:gap-20"
+    >
+      <img
+        src="/images/portrait.svg"
+        alt="About character"
+        class="h-auto w-28 shrink-0 md:w-32 lg:w-40"
+      />
+
+      <div class="flex items-center gap-8 md:gap-12">
+        <div class="text-center md:text-left">
+          <div
+            class="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl"
+          >
+            2.5 <span class="text-xl font-bold md:text-2xl">yrs</span>
+          </div>
+          <div
+            class="mt-1 text-sm font-semibold text-muted-foreground md:text-xl"
+          >
+            Frontend
+          </div>
+        </div>
+        <div class="h-12 w-px bg-border"></div>
+        <div class="text-center md:text-left">
+          <div
+            class="text-4xl font-extrabold tracking-tight text-foreground md:text-5xl"
+          >
+            2 <span class="text-xl font-bold md:text-2xl">yrs</span>
+          </div>
+          <div
+            class="mt-1 text-sm font-semibold text-muted-foreground md:text-xl"
+          >
+            UI/UX
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p
+      class="mb-12 text-left text-base leading-relaxed text-foreground/80 md:mb-16 md:text-lg"
+    >
+      I am a passionate software engineer focused on modern frontend
+      technologies and user experience design. I believe that excellent code not
+      only solves problems but also brings elegant visual enjoyment and smooth
+      operation experience.
+    </p>
+
+    <div>
+      <h3 class="mb-6 text-left text-xl font-bold text-foreground md:text-2xl">
+        What I bring
+      </h3>
+
+      <div class="flex w-full flex-wrap gap-4">
+        {
+          bringItems.map((item) => (
+            <BringCard
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- <div>
+        <h3 class="mb-6 text-left text-xl font-bold text-foreground md:text-2xl">Experience</h3>
+
+        <div class="flex w-full flex-col gap-6">
+          <div class="flex items-start gap-3">
+            <div class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-brand-slate"></div>
+            <div class="flex w-full flex-col gap-1 md:flex-row md:items-center md:justify-between md:gap-4">
+              <div>
+                <span class="text-base font-bold text-foreground md:text-lg">Sunbird Software</span>
+                <span class="text-base text-foreground/85 md:text-lg"> - Frontend Developer</span>
+              </div>
+              <span class="whitespace-nowrap text-sm text-muted-foreground md:text-base">Dec 2023 – Mar 2026, Taipei</span>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-brand-slate"></div>
+            <div class="flex w-full flex-col gap-1 md:flex-row md:items-center md:justify-between md:gap-4">
+              <div>
+                <span class="text-base font-bold text-foreground md:text-lg">SoftMobile</span>
+                <span class="text-base text-foreground/85 md:text-lg"> - UI/UX Designer</span>
+              </div>
+              <span class="whitespace-nowrap text-sm text-muted-foreground md:text-base">Jun 2021 – Mar 2023, Taipei</span>
+            </div>
+          </div>
+        </div>
+      </div> -->
+  </div>
+</section>
