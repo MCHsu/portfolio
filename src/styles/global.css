@@ -40,10 +40,10 @@
   /* Custom Design Tokens / Component Tokens */
   --color-project-card-border: oklch(100% 0 0 / 10%);
   --color-mouse-glow: oklch(96% 0.06 80 / 45%);
-  --color-glow-warm: oklch(0.9175 0.0677 81.37 / 60%);
-  --color-glow-pink: oklch(0.8699 0.0623 352.56 / 60%);
+  --color-glow-warm: oklch(0.9175 0.0677 81.37 / 65%);
+  --color-glow-pink: oklch(0.8699 0.0623 352.56 / 65%);
   --color-surface-subtle: oklch(94.5% 0.008 30);
-  /* --shadow-card-hover: 0 28px 80px oklch(20% 0.03 250 / 0.12); */
+
   --shadow-card-hover: 0 20px 60px rgba(251, 224, 177, 0.35);
 
   /* Animations & Keyframes */
@@ -96,7 +96,6 @@
 }
 
 @utility shell {
-  /* @apply container mx-auto; */
   @apply container mx-auto px-6 md:px-16 lg:px-32 xl:px-40;
 }
 
