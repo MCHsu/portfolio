@@ -17,11 +17,11 @@ const { Content } = await render(project);
 ---
 
 <Layout title={`${project.data.title} | Portfolio`}>
-  <article class="max-w-4xl mx-auto py-24 px-6 w-full relative z-10">
+  <article class="relative z-10 mx-auto w-full max-w-4xl px-6 py-24">
     <div class="mb-12">
       <a
         href="/#projects"
-        class="text-accent hover:text-accent/80 flex items-center gap-2 mb-8 transition-colors w-fit"
+        class="mb-8 flex w-fit items-center gap-2 text-accent transition-colors hover:text-accent/80"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -40,18 +40,18 @@ const { Content } = await render(project);
       </a>
 
       <h1
-        class="text-4xl md:text-6xl font-black text-foreground mb-6 uppercase tracking-wider"
+        class="mb-6 text-4xl font-black tracking-wider text-foreground uppercase md:text-6xl"
       >
         {project.data.title}
       </h1>
-      <p class="text-xl text-muted-foreground mb-8 leading-relaxed max-w-3xl">
+      <p class="mb-8 max-w-3xl text-xl leading-relaxed text-muted-foreground">
         {project.data.description}
       </p>
 
-      <div class="flex flex-wrap gap-3 mb-8">
+      <div class="mb-8 flex flex-wrap gap-3">
         {
           project.data.tags.map((tag) => (
-            <span class="px-3 py-1.5 text-sm rounded-md border border-project-card-border bg-card/30 text-muted-foreground font-medium">
+            <span class="rounded-md border border-project-card-border bg-card/30 px-3 py-1.5 text-sm font-medium text-muted-foreground">
               {tag}
             </span>
           ))
@@ -107,7 +107,7 @@ const { Content } = await render(project);
 
     {/* Project Content Box */}
     <div
-      class="prose prose-invert prose-accent max-w-none rounded-2xl bg-card/30 border border-border p-8 md:p-12 backdrop-blur-sm shadow-2xl"
+      class="prose-accent prose max-w-none rounded-2xl border border-border bg-card/30 p-8 shadow-2xl backdrop-blur-sm prose-invert md:p-12"
     >
       <Content />
     </div>
