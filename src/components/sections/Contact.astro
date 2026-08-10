@@ -19,18 +19,26 @@ const {
 
 <section
   id="contact"
-  class="relative isolate left-1/2 w-screen max-w-[100vw] -translate-x-1/2 py-16 md:py-24 lg:mb-44 lg:py-28"
+  class="relative isolate w-full py-16 md:py-24 lg:mb-44 lg:py-28"
 >
-  <img
-    src="/images/contact_bg.svg"
-    alt=""
-    class="pointer-events-none absolute top-[65%] left-1/2 z-0 w-[180%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none sm:w-[140%] md:w-[120%] lg:w-[1200px] dark:opacity-30"
-  />
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute top-[55%] md:top-[65%] left-1/2 z-0 aspect-3/4 sm:aspect-3/4 md:aspect-1092/810 w-[180%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none sm:w-[140%] md:w-[120%] lg:w-full dark:opacity-30"
+  >
+    <div
+      class="absolute inset-0 bg-radial-[38.69%_38.69%_at_63%_49%] from-glow-warm to-transparent"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-radial-[38.69%_38.69%_at_37%_50%] from-glow-pink to-transparent"
+    >
+    </div>
+  </div>
 
   <div
     class="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center"
   >
-    <SectionTitle title={title} className="mb-8 md:mb-12" />
+    <SectionTitle title={title} />
 
     <div
       class="flex flex-col items-center justify-center mx-auto w-full max-w-4xl gap-10 px-4 pt-8"
@@ -42,7 +50,7 @@ const {
       />
 
       <p
-        class="max-w-sm text-base leading-relaxed text-muted-foreground md:max-w-lg md:text-lg"
+        class="max-w-sm text-base font-medium text-muted-foreground md:max-w-lg md:text-lg"
       >
         {description}
       </p>

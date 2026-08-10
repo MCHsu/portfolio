@@ -10,12 +10,14 @@ interface Props {
 const { icon: Icon, title, description } = Astro.props;
 ---
 
-<article
-  class="flex flex-1 basis-full items-start gap-3 rounded-xl border border-border/60 bg-background p-4 lg:basis-[calc(50%-0.5rem)] lg:gap-4 lg:p-5"
+<div
+  class="flex flex-1 basis-full items-start gap-3 rounded-xl border border-card-border bg-card p-4 lg:basis-[calc(50%-0.5rem)] lg:gap-4 lg:p-5"
 >
   <Icon className="mt-0.5 size-5 shrink-0 text-foreground" />
   <div class="min-w-0">
-    <h4 class="text-left text-xl font-bold text-foreground">{title}</h4>
-    <p class="mt-1 text-base text-muted-foreground">{description}</p>
+    <h4 class="text-left text-lg md:text-xl font-bold text-foreground">
+      {title}
+    </h4>
+    <p class="mt-1 text-sm md:text-base text-muted-foreground">{description}</p>
   </div>
-</article>
+</div>

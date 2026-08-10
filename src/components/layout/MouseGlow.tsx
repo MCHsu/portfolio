@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
-import { motion, useMotionTemplate, useMotionValue, useSpring } from "motion/react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+} from "motion/react";
 
 export function MouseGlow() {
   const mouseX = useMotionValue(0);
@@ -24,8 +29,14 @@ export function MouseGlow() {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      document.documentElement.removeEventListener("mouseleave", handleMouseLeave);
-      document.documentElement.removeEventListener("mouseenter", handleMouseEnter);
+      document.documentElement.removeEventListener(
+        "mouseleave",
+        handleMouseLeave,
+      );
+      document.documentElement.removeEventListener(
+        "mouseenter",
+        handleMouseEnter,
+      );
     };
   }, [isVisible, mouseX, mouseY]);
 
@@ -36,7 +47,7 @@ export function MouseGlow() {
         opacity: isVisible ? 1 : 0,
         background: useMotionTemplate`
           radial-gradient(
-            600px circle at ${smoothX}px ${smoothY}px,
+            400px circle at ${smoothX}px ${smoothY}px,
             var(--color-mouse-glow),
             transparent 60%
           )

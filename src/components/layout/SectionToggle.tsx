@@ -24,8 +24,10 @@ export function SectionToggle() {
             title={section.label}
             href={`#${section.id}`}
             onClick={(event) => handleClick(event, section.id)}
-            className={`h-2.5 w-2.5 cursor-pointer border-2 border-brand-slate shadow-lg transition-all duration-300 ease-out hover:scale-[1.2] hover:opacity-80 ${
-              isActive ? "scale-[1.3] rotate-0 bg-brand-slate opacity-100" : "rotate-45 bg-transparent opacity-40"
+            className={`h-2.5 w-2.5 cursor-pointer border-2 border-primary shadow-lg transition-all duration-300 ease-out hover:scale-[1.2] hover:opacity-80 ${
+              isActive
+                ? "scale-[1.3] rotate-0 bg-primary opacity-100"
+                : "rotate-45 bg-transparent opacity-40"
             }`}
           />
         );
