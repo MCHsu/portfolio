@@ -5,7 +5,7 @@ tags: ["Vue", "Pinia", "Tailwind", "Firebase"]
 order: 3
 githubUrl: "https://github.com/MCHsu/Tripper"
 demoUrl: "https://mchsu.github.io/Tripper/"
-cover: "../../assets/projects/web.png"
+cover: "../../assets/projects/tripper_cover.png"
 coverAlt: "Tripper screenshot"
 ---
 
