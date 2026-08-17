@@ -9,7 +9,7 @@ A personal frontend portfolio built with Astro islands, React, and Tailwind CSS 
 
 🚀 **Live Demo:** [https://minchia-portfolio.vercel.app/](https://minchia-portfolio.vercel.app/)
 
-![Portfolio preview](src/assets/projects/portfolio.png)
+![Portfolio preview](src/assets/projects/portfolio_cover.png)
 
 ## 👋 Overview
 
@@ -55,63 +55,6 @@ This site is a static Astro portfolio with selective React hydration. Project en
 └── package.json
 ```
 
-## 📝 Adding a Project
-
-Drop a Markdown file into `src/content/projects/`. Schema fields:
-
-| Field | Type | Notes |
-| --- | --- | --- |
-| `title` | `string` | Required |
-| `description` | `string` | Required |
-| `tags` | `string[]` | Required |
-| `order` | `number` | Default `99`; lower = earlier |
-| `draft` | `boolean` | Default `false`; drafts are filtered out |
-| `cover` | image | Required; relative path to an image |
-| `coverAlt` | `string` | Optional |
-| `githubUrl` | `url` | Optional |
-| `demoUrl` | `url` | Optional |
-
-Example frontmatter:
-
-```md
----
-title: "Tripper"
-description: "A Vue-based travel e-commerce platform."
-tags: ["Vue", "Pinia", "Tailwind", "Firebase"]
-order: 3
-githubUrl: "https://github.com/MCHsu/Tripper"
-demoUrl: "https://mchsu.github.io/Tripper/"
-cover: "../../assets/projects/tripper_cover.png"
-coverAlt: "Tripper screenshot"
----
-```
-
-`getSortedProjects()` in `src/lib/projects.ts` filters out drafts and sorts by `order`. Detail pages are generated automatically at `/projects/<slug>`.
-
-## 🎨 Design System
-
-Theming lives in `src/styles/global.css` (Tailwind v4 CSS-first):
-
-- `@theme` semantic tokens for colors, shadows, fonts, and animations
-- Dark mode via `@custom-variant dark (&:where(.dark, .dark *))` and `.dark { … }` overrides
-- Fonts: `--font-heading` (Lexend Exa) / `--font-sans` (Noto Sans)
-- Custom utilities: `shell` (responsive page shell), `glow-noise` (SVG noise overlay)
-- Keyframes: `star-flicker` for Hero decorative stars
-
-## ⚡ Rendering & Hydration
-
-Astro ships zero JS by default. Only three interactive islands hydrate, and each uses `client:media` so unused UI never loads:
-
-```astro
-<MouseGlow client:media="(pointer: fine)" />
-<MobileNav client:media="(width < 48rem)" />
-{isHome && <SectionToggle client:media="(width >= 48rem)" />}
-```
-
-- `MouseGlow` — fine pointers only (skip on touch)
-- `MobileNav` — below `md` (48rem)
-- `SectionToggle` — home page, `md` and up
-
 ## 🚀 Getting Started
 
 Requires **Node.js `>=22.12.0`**.
@@ -127,12 +70,12 @@ Dev server: [http://localhost:4321](http://localhost:4321)
 
 ## 🧞 Scripts
 
-| Command | Action |
-| --- | --- |
-| `npm install` | Install dependencies |
-| `npm run dev` | Start local dev server at `localhost:4321` |
-| `npm run build` | Build production site to `./dist/` |
-| `npm run preview` | Preview the production build locally |
+| Command           | Action                                        |
+| ----------------- | --------------------------------------------- |
+| `npm install`     | Install dependencies                          |
+| `npm run dev`     | Start local dev server at `localhost:4321`    |
+| `npm run build`   | Build production site to `./dist/`            |
+| `npm run preview` | Preview the production build locally          |
 | `npm run astro …` | Run Astro CLI commands (`check`, `add`, etc.) |
 
 ## 🌐 Deployment
