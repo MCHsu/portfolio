@@ -5,7 +5,7 @@ import { SectionToggle } from "@/components/layout/SectionToggle";
 import FloatingIcons from "@/components/layout/FloatingIcons.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { MouseGlow } from "@/components/layout/MouseGlow";
-import { MobileNav } from "@/components/layout/MobileNav";
+import MobileNav from "@/components/layout/MobileNav.astro";
 
 interface Props {
   title: string;
@@ -63,7 +63,7 @@ const canonicalUrl = new URL(
   >
     <MouseGlow client:media="(pointer: fine)" />
     <Navbar />
-    <MobileNav client:media="(width < 48rem)" />
+    <MobileNav />
     {isHome && <SectionToggle client:media="(width >= 48rem)" />}
     <FloatingIcons />
     <div class="relative flex flex-1 flex-col overflow-hidden">

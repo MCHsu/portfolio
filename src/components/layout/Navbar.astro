@@ -2,7 +2,7 @@
 import { Download } from "lucide-react";
 import ThemeToggle from "@/components/layout/ThemeToggle.astro";
 import { Button } from "@/components/ui/button";
-import { NAV_SECTIONS } from "@/lib/sections";
+import { NavLinks } from "@/components/layout/NavLinks";
 ---
 
 <header
@@ -21,16 +21,7 @@ import { NAV_SECTIONS } from "@/lib/sections";
     <nav
       class="hidden items-center justify-center gap-8 text-base font-medium md:flex md:flex-1 lg:gap-12 lg:text-lg"
     >
-      {
-        NAV_SECTIONS.map((section) => (
-          <a
-            class="text-muted-foreground transition-colors hover:text-foreground dark:text-white/70 dark:hover:text-white"
-            href={`/#${section.id}`}
-          >
-            {section.label}
-          </a>
-        ))
-      }
+      <NavLinks variant="desktop" client:idle />
     </nav>
 
     <div class="flex flex-1 items-center justify-end gap-2 md:gap-3 lg:gap-4">
