@@ -6,25 +6,24 @@ import { Button } from "@/components/ui/button";
   id="hero"
   class="relative z-0 shell flex min-h-[calc(100svh-4rem)] w-screen max-w-[100vw] flex-col items-center justify-center"
 >
-  <img
-    src="/images/star-white.svg"
-    alt=""
-    class="pointer-events-none absolute top-[28%] left-[6%] z-20 w-5 animate-star-flicker-slow select-none sm:left-[10%] sm:w-6 md:left-[14%] md:w-8 lg:left-[18%]"
-  />
-  <img
-    src="/images/star-white.svg"
-    alt=""
-    class="pointer-events-none absolute top-[36%] right-[6%] z-20 w-4 animate-star-flicker select-none sm:right-[10%] sm:w-5 md:right-[14%] md:w-7 lg:right-[18%]"
-  />
-
   <div
     class="relative z-30 mx-auto flex w-full flex-col items-center text-center md:gap-6 md:px-8"
   >
     <h1
-      class="text-[28px] leading-tight font-extrabold tracking-tight text-foreground sm:text-5xl md:leading-[1.1] lg:text-6xl"
+      class="relative text-[28px] leading-tight font-extrabold tracking-tight text-foreground sm:text-5xl md:leading-[1.1] lg:text-6xl"
     >
-      <span class="mb-2 block md:mb-4">Hi, I’m MIN CHIA</span>
-      <span class="block">Frontend Engineer</span>
+      <img
+        src="/images/star-white.svg"
+        alt="white star"
+        class="pointer-events-none absolute top-0 left-[-2%] z-20 w-5 -translate-x-1/2 -translate-y-1/2 animate-star-flicker-slow select-none sm:w-6 md:left-[-5%] md:w-8 lg:w-10"
+      />
+      <span class="mb-2 block md:mb-4"> Hi, I’m MIN CHIA </span>
+      <span class="block"> Frontend Engineer </span>
+      <img
+        src="/images/star-white.svg"
+        alt="white star"
+        class="pointer-events-none absolute right-[-2%] bottom-0 z-20 w-4 translate-x-1/2 translate-y-1/2 animate-star-flicker select-none sm:w-5 md:right-[-5%] md:w-7 lg:w-9"
+      />
     </h1>
     <p
       class="mx-2 mt-6 max-w-sm text-base font-medium text-muted-foreground sm:mx-auto sm:max-w-lg sm:text-lg md:mt-8 md:max-w-xl md:text-xl"
@@ -42,7 +41,7 @@ import { Button } from "@/components/ui/button";
 
   <div
     aria-hidden="true"
-    class="pointer-events-none absolute top-1/2 left-1/2 z-10 aspect-3/4 w-[180%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none sm:w-[140%] md:aspect-4/3 md:w-[120%] lg:w-full dark:opacity-30"
+    class="pointer-events-none absolute top-1/2 left-1/2 z-10 aspect-3/4 w-[180%] max-w-none -translate-x-1/2 -translate-y-1/2 select-none sm:w-[140%] md:aspect-4/3 md:w-[120%] lg:w-full"
   >
     <div
       class="absolute inset-0 bg-radial-[35%_50%_at_35%_50%] from-glow-warm to-transparent"

@@ -13,6 +13,21 @@ export function MouseGlow() {
   const smoothY = useSpring(mouseY, { damping: 50, stiffness: 400 });
   const [isVisible, setIsVisible] = useState(false);
 
+  const glowBackground = useMotionTemplate`
+    radial-gradient(
+      300px circle at ${smoothX}px ${smoothY}px,
+      var(--color-mouse-glow),
+      transparent 60%
+    )
+  `;
+  const glowMask = useMotionTemplate`
+    radial-gradient(
+      300px circle at ${smoothX}px ${smoothY}px,
+      black,
+      transparent 60%
+    )
+  `;
+
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
       mouseX.set(event.clientX);
@@ -41,18 +56,24 @@ export function MouseGlow() {
   }, [isVisible, mouseX, mouseY]);
 
   return (
-    <motion.div
-      className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
-      style={{
-        opacity: isVisible ? 1 : 0,
-        background: useMotionTemplate`
-          radial-gradient(
-            400px circle at ${smoothX}px ${smoothY}px,
-            var(--color-mouse-glow),
-            transparent 60%
-          )
-        `,
-      }}
-    />
+    <>
+      <motion.div
+        className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
+        style={{
+          opacity: isVisible ? 1 : 0,
+          background: glowBackground,
+        }}
+      />
+      <motion.div
+        className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
+        style={{
+          opacity: isVisible ? 1 : 0,
+          WebkitMaskImage: glowMask,
+          maskImage: glowMask,
+        }}
+      >
+        <div aria-hidden="true" className="glow-noise" />
+      </motion.div>
+    </>
   );
 }

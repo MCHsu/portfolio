@@ -38,10 +38,10 @@
   --color-ring-offset: oklch(100% 0 0);
 
   /* Custom Design Tokens / Component Tokens */
-  --color-project-card-border: oklch(100% 0 0 / 10%);
   --color-mouse-glow: oklch(96% 0.06 80 / 45%);
-  --color-glow-warm: oklch(0.9175 0.0677 81.37 / 65%);
-  --color-glow-pink: oklch(0.8699 0.0623 352.56 / 65%);
+  --color-glow-warm: oklch(91.8% 0.068 81.4 / 75%);
+  --color-glow-pink: oklch(87% 0.062 352.6 / 75%);
+
   --color-surface-subtle: oklch(94.5% 0.008 30);
 
   --shadow-card-hover: 0 20px 60px rgba(251, 224, 177, 0.35);
@@ -77,7 +77,7 @@
 
   --color-primary: oklch(83.688% 0.10041 185.918 / 0.801);
   --color-primary-hover: #317982;
-  --color-primary-foreground: oklch(92.2% 0 0);
+  --color-primary-foreground: oklch(22.8% 0.029 277.9);
 
   --color-secondary: oklch(26.9% 0 0);
   --color-secondary-foreground: oklch(98.5% 0 0);
@@ -89,14 +89,40 @@
   --color-accent-foreground: oklch(20.5% 0 0);
 
   --color-border: oklch(100% 0 0 / 10%);
+  --color-card-border: oklch(100% 0 0 / 15%);
+
   --color-input: oklch(100% 0 0 / 15%);
   --color-ring: oklch(55.6% 0 0);
   --color-ring-offset: oklch(14.5% 0 0);
+
   --color-mouse-glow: oklch(86.5% 0.12 186.2 / 8%);
+  --color-glow-warm: oklch(69.56% 0.06714 80.383 / 0.3);
+  --color-glow-pink: oklch(61.582% 0.06826 324.558 / 0.3);
+  /* --color-glow-warm: oklch(42.1% 0.013 297.3 /0.6);
+  --color-glow-pink: oklch(42.2% 0.037 301.4 /0.6); */
+  /* --color-glow-warm: oklch(44.438% 0.05513 326.412 / 0.4);
+  --color-glow-pink: oklch(0.5 0.04 250 / 40%); */
 }
 
 @utility shell {
   @apply container mx-auto px-6 md:px-16 lg:px-32 xl:px-40;
+}
+
+/* Soft grain overlay to dither radial glow banding (esp. dark mode). */
+@utility glow-noise {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 3%;
+  mix-blend-mode: soft-light;
+  /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); */
+  background-image: url("data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%3E%3Cfilter%20id%3D%22noise%22%3E%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.4%22%20numOctaves%3D%224%22%20stitchTiles%3D%22stitch%22%2F%3E%3C%2Ffilter%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20filter%3D%22url(%23noise)%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+
+  @variant dark {
+    opacity: 5%;
+  }
 }
 
 @layer base {

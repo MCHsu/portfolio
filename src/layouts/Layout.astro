@@ -64,11 +64,13 @@ const canonicalUrl = new URL(
     <MouseGlow client:media="(pointer: fine)" />
     <Navbar />
     <MobileNav client:media="(width < 48rem)" />
-    <main class="relative z-10 flex flex-1 flex-col overflow-x-clip">
-      <slot />
-    </main>
     {isHome && <SectionToggle client:media="(width >= 48rem)" />}
     <FloatingIcons />
-    <Footer />
+    <div class="relative flex flex-1 flex-col overflow-hidden">
+      <main class="relative z-10 flex flex-1 flex-col">
+        <slot />
+      </main>
+      <Footer />
+    </div>
   </body>
 </html>

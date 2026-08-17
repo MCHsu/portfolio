@@ -52,11 +52,12 @@ const primaryLabel = "Live Demo";
       </p>
     </div>
 
-    <div class="flex w-full gap-4">
-      <a href={primaryHref} class="flex-1 sm:flex-none">
-        <Button
-          className="h-12 w-full cursor-pointer px-7 text-lg font-semibold focus-visible:ring-2 focus-visible:ring-primary/30 sm:min-w-40"
-        >
+    <div class="flex w-full flex-wrap gap-3 sm:gap-4">
+      <a
+        href={primaryHref}
+        class="min-w-0 flex-1 basis-[calc(50%-0.375rem)] sm:flex-none sm:basis-auto"
+      >
+        <Button className="w-full shrink sm:min-w-40">
           {primaryLabel}
         </Button>
       </a>
@@ -67,9 +68,9 @@ const primaryLabel = "Live Demo";
             href={githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="flex-1 sm:flex-none"
+            class="min-w-0 flex-1 basis-[calc(50%-0.375rem)] sm:flex-none sm:basis-auto"
           >
-            <Button variant="ghost">
+            <Button variant="ghost" className="h-12 w-full shrink">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

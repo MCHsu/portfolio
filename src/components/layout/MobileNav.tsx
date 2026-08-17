@@ -25,12 +25,14 @@ export function MobileNav() {
               key={section.id}
               href={`/#${section.id}`}
               className={`flex flex-col items-center gap-1.5 transition-colors duration-300 ${
-                isActive
-                  ? "text-primary"
-                  : "text-foreground/60 hover:text-foreground/90"
+                isActive ? "text-primary" : "text-muted-foreground"
               }`}
             >
-              <span className="text-base font-medium tracking-wide">
+              <span
+                className={`text-base ${
+                  isActive ? "font-bold" : "font-medium"
+                }`}
+              >
                 {section.label}
               </span>
             </a>
