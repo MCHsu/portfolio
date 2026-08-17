@@ -11,40 +11,38 @@
   --font-heading: "Lexend Exa Variable", system-ui, sans-serif;
 
   /* Semantic Colors (Light Mode) */
-  --color-background: #ffffff;
-  --color-foreground: #3e3e3e;
+  --color-background: oklch(100% 0 0);
+  --color-foreground: oklch(36.4% 0 0);
 
-  --color-card: oklch(100% 0 0 /0.7);
-  --color-card-foreground: #3e3e3e;
+  --color-card: oklch(100% 0 0 / 0.7);
+  --color-card-foreground: oklch(36.4% 0 0);
 
-  --color-primary: #597285;
-  --color-primary-hover: #4a6275;
-  --color-primary-foreground: #ffffff;
+  --color-primary: oklch(53.9% 0.042 241.3);
+  --color-primary-hover: oklch(48.4% 0.042 242.6);
+  --color-primary-foreground: oklch(100% 0 0);
 
   --color-secondary: oklch(97% 0 0);
   --color-secondary-foreground: oklch(20.5% 0 0);
 
-  --color-muted: #f7f7f7;
-  --color-muted-foreground: #737373;
+  --color-muted: oklch(97.6% 0 0);
+  --color-muted-foreground: oklch(55.6% 0 0);
 
   --color-accent: oklch(86.5% 0.12 186.2);
   --color-accent-foreground: oklch(14.5% 0 0);
 
-  --color-border: oklch(92.2% 0 0 /0.45);
-  --color-card-border: oklch(92.2% 0 0 /0.6);
+  --color-border: oklch(92.2% 0 0 / 0.45);
+  --color-card-border: oklch(92.2% 0 0 / 0.6);
 
   --color-input: oklch(92.2% 0 0);
   --color-ring: oklch(70.8% 0 0);
   --color-ring-offset: oklch(100% 0 0);
 
-  /* Custom Design Tokens / Component Tokens */
-  --color-mouse-glow: oklch(96% 0.06 80 / 45%);
-  --color-glow-warm: oklch(91.8% 0.068 81.4 / 75%);
-  --color-glow-pink: oklch(87% 0.062 352.6 / 75%);
+  /* Custom Design Tokens*/
+  --color-mouse-glow: oklch(96% 0.06 80 / 0.45);
+  --color-glow-warm: oklch(91.8% 0.068 81.4 / 0.75);
+  --color-glow-pink: oklch(87% 0.062 352.6 / 0.75);
 
-  --color-surface-subtle: oklch(94.5% 0.008 30);
-
-  --shadow-card-hover: 0 20px 60px rgba(251, 224, 177, 0.35);
+  --shadow-card-hover: 0 20px 60px oklch(91.8% 0.068 81.4 / 0.35);
 
   /* Animations & Keyframes */
   --animate-star-flicker: star-flicker 3s infinite ease-in-out;
@@ -67,43 +65,40 @@
 /* Dark mode variant */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Dark mode theme overrides */
 .dark {
-  --color-background: #23273d;
-  --color-foreground: oklch(100% 0 0 / 85%);
+  /* Semantic Colors (Dark Mode) */
+  --color-background: oklch(28% 0.041 275.5);
+  --color-foreground: oklch(100% 0 0 / 0.85);
 
   --color-card: oklch(100% 0.00011 271.152 / 0.08);
   --color-card-foreground: oklch(98.5% 0 0);
 
-  --color-primary: oklch(83.688% 0.10041 185.918 / 0.801);
-  --color-primary-hover: #317982;
+  --color-primary: oklch(83.7% 0.1 185.92 / 0.801);
+  --color-primary-hover: oklch(53.5% 0.072 206.5);
   --color-primary-foreground: oklch(22.8% 0.029 277.9);
 
   --color-secondary: oklch(26.9% 0 0);
   --color-secondary-foreground: oklch(98.5% 0 0);
 
   --color-muted: oklch(100% 0.00011 271.152 / 0.15);
-  --color-muted-foreground: oklch(78.261% 0.00009 271.152);
+  --color-muted-foreground: oklch(78.261% 0 271.1);
 
   --color-accent: oklch(86.5% 0.12 186.2);
   --color-accent-foreground: oklch(20.5% 0 0);
 
-  --color-border: oklch(100% 0 0 / 10%);
-  --color-card-border: oklch(100% 0 0 / 15%);
+  --color-border: oklch(100% 0 0 / 0.1);
+  --color-card-border: oklch(100% 0 0 / 0.15);
 
-  --color-input: oklch(100% 0 0 / 15%);
+  --color-input: oklch(100% 0 0 / 0.15);
   --color-ring: oklch(55.6% 0 0);
   --color-ring-offset: oklch(14.5% 0 0);
 
-  --color-mouse-glow: oklch(86.5% 0.12 186.2 / 8%);
+  /* Custom Design Tokens*/
+  --color-mouse-glow: oklch(86.5% 0.12 186.2 / 0.08);
   --color-glow-warm: oklch(69.56% 0.06714 80.383 / 0.3);
   --color-glow-pink: oklch(61.582% 0.06826 324.558 / 0.3);
-  /* --color-glow-warm: oklch(42.1% 0.013 297.3 /0.6);
-  --color-glow-pink: oklch(42.2% 0.037 301.4 /0.6); */
-  /* --color-glow-warm: oklch(44.438% 0.05513 326.412 / 0.4);
-  --color-glow-pink: oklch(0.5 0.04 250 / 40%); */
 
-  --shadow-card-hover: 0 20px 60px oklch(59.049% 0.09532 235.294 / 0.3);
+  --shadow-card-hover: 0 20px 60px oklch(69.56% 0.06714 80.383 / 0.15);
 }
 
 @utility shell {
