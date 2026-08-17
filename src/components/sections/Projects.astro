@@ -3,6 +3,12 @@ import ProjectCard from "@/components/sections/ProjectCard.astro";
 import SectionTitle from "@/components/sections/SectionTitle.astro";
 import { getSortedProjects } from "@/lib/projects";
 
+interface Props {
+  title?: string;
+}
+
+const { title = "Featured Projects" } = Astro.props;
+
 const projects = await getSortedProjects();
 ---
 
@@ -10,12 +16,7 @@ const projects = await getSortedProjects();
   id="projects"
   class="relative isolate shell w-full py-16 md:py-24 lg:py-28"
 >
-  <!-- <img
-    src="/images/yellow_circle_bg.svg"
-    alt=""
-    class="pointer-events-none absolute -z-10 w-[140vw] max-w-none -translate-x-2/3 -translate-y-1/4 select-none sm:w-[120vw] md:w-full lg:w-[105vw] dark:opacity-30"
-  /> -->
-  <SectionTitle title="Featured Projects" className="mb-12" />
+  <SectionTitle title={title} className="mb-12" />
 
   <div class="mx-auto flex w-full max-w-4xl flex-col gap-8">
     {
