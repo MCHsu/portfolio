@@ -1,97 +1,69 @@
-# MIN CHIA — Portfolio
+<h1 align="center">Hi, I'm MIN CHIA — Welcome to my portfolio! 👋</h1>
 
-A personal frontend portfolio built with Astro islands, React, and Tailwind CSS v4 — static-first, content-driven, and tuned for fast loads.
+<h4 align="center">Modern developer portfolio built with Astro & Tailwind v4</h4>
 
-[![Astro](https://img.shields.io/badge/Astro-7-BC52EE?logo=astro&logoColor=white)](https://astro.build)
-[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+<h3 align="center"> <a href="https://minchia-portfolio.vercel.app/" target="_blank">Live Demo</a> 👀</h3>
 
-🚀 **Live Demo:** [https://minchia-portfolio.vercel.app/](https://minchia-portfolio.vercel.app/)
+![hero](public/images/readme_hero.png)
 
-![Portfolio preview](src/assets/projects/portfolio_cover.png)
+<p align="center">
+  <img src="https://img.shields.io/badge/Astro-7?style=for-the-badge&logo=astro&color=F6F4EF" />
+  <img src="https://img.shields.io/badge/React-19?style=for-the-badge&logo=react&color=F6F4EF" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4?style=for-the-badge&logo=tailwindcss&color=F6F4EF" />
+  <img src="https://img.shields.io/badge/TypeScript-6?style=for-the-badge&logo=typescript&color=F6F4EF" />
+</p>
 
-## 👋 Overview
+<p align="center">
+  <img src="https://img.shields.io/badge/Lighthouse%20Performance-100-success?style=for-the-badge&logo=googlechrome&logoColor=white" />
+  <img src="https://img.shields.io/badge/Accessibility-96-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Best%20Practices-100-success?style=for-the-badge" />
+</p>
 
-This site is a static Astro portfolio with selective React hydration. Project entries live in an Astro content collection, so adding or updating case studies is a Markdown + frontmatter change — no page wiring required. Interactive UI (theme toggle, scroll-spy nav, pointer glow) is isolated into islands and only hydrated when the matching media query matches. Theming uses Tailwind CSS v4’s CSS-first `@theme` tokens with a class-based light/dark system and no FOUC.
+---
 
-## ✨ Features
+## ✨ Technical Highlights
 
-- Content-collection-driven projects with Zod-validated frontmatter (`src/content.config.ts`)
-- Statically generated detail pages via `getStaticPaths()` (`src/pages/projects/[slug].astro`)
-- Dark mode with no FOUC — inline pre-paint theme script in `src/layouts/Layout.astro`
-- Scroll-spy navigation via IntersectionObserver (`src/lib/useActiveSection.ts`) — desktop section dots + mobile bottom bar
-- Pointer-following spring glow with Motion (`src/components/layout/MouseGlow.tsx`)
-- Base UI + CVA primitives (`button.tsx`, `badge.tsx`) with a `cn()` merge helper
-- SEO basics: meta description, canonical URL, Open Graph title/description/url
+- **Astro Islands Architecture:** Zero JavaScript baseline with isolated client hydration for interactive components.
+
+- **Type-Safe Content Layer:** Build-time schema validation via Zod and Astro Content Collections.
+
+- **Modern Design Tokens:** Configured with Tailwind v4 `@theme` directives and OKLCH color spaces for perceptual uniformity.
+
+- **Performance & a11y:** Built with semantic HTML and accessible ARIA attributes, achieving 95+ scores across all Lighthouse metrics.
+
+---
 
 ## 🧰 Tech Stack
 
-- **Framework:** Astro 7, React 19 (islands), TypeScript
-- **UI:** Base UI (`@base-ui/react`), Lucide icons, CVA + `clsx` + `tailwind-merge`
-- **Styling:** Tailwind CSS v4 (CSS-first via `@tailwindcss/vite`), `@tailwindcss/typography`, `tw-animate-css`, shadcn Tailwind preset
-- **Fonts:** Lexend Exa Variable (headings), Noto Sans Variable (body)
-- **Animation:** Motion (`motion/react`)
-- **Tooling:** Prettier + `prettier-plugin-astro` + `prettier-plugin-tailwindcss`
+- **Core:** Astro 7, React 19(islands), TypeScript
 
-## 📁 Project Structure
+- **Styling:** Tailwind CSS v4, Shadcn UI
 
-```text
-/
-├── public/                 # Static assets (favicon, SVGs)
-├── src/
-│   ├── assets/projects/    # Project cover images (Astro Image)
-│   ├── components/
-│   │   ├── layout/         # Navbar, footer, theme, islands
-│   │   ├── sections/       # Hero, About, Projects, Contact
-│   │   └── ui/             # Button, badge primitives
-│   ├── content/projects/   # Markdown project entries
-│   ├── content.config.ts   # Collection schema
-│   ├── layouts/            # Root layout + SEO + islands
-│   ├── lib/                # Projects, theme, sections, hooks
-│   ├── pages/              # Routes (/, /projects/[slug])
-│   └── styles/global.css   # Tailwind v4 theme tokens
-├── astro.config.mjs
-└── package.json
-```
+- **Motion:** Motion
+
+---
 
 ## 🚀 Getting Started
 
-Requires **Node.js `>=22.12.0`**.
+**Requirements:**
+
+- Node.js `>= 22.12.0`
 
 ```sh
+# Clone the repository
 git clone https://github.com/MCHsu/portfolio.git
-cd portfolio
+
+# Install dependencies
 npm install
+
+# Start the dev server
 npm run dev
 ```
 
-Dev server: [http://localhost:4321](http://localhost:4321)
+---
 
-## 🧞 Scripts
+## 📫 Contact
 
-| Command           | Action                                        |
-| ----------------- | --------------------------------------------- |
-| `npm install`     | Install dependencies                          |
-| `npm run dev`     | Start local dev server at `localhost:4321`    |
-| `npm run build`   | Build production site to `./dist/`            |
-| `npm run preview` | Preview the production build locally          |
-| `npm run astro …` | Run Astro CLI commands (`check`, `add`, etc.) |
+- 👩‍💻 [LinkedIn](https://www.linkedin.com/in/min-chia-hsu)
 
-## 🌐 Deployment
-
-Deployed on [Vercel](https://vercel.com) as a static Astro site (zero-config adapter). Live at:
-
-**[https://minchia-portfolio.vercel.app/](https://minchia-portfolio.vercel.app/)**
-
-## 🗺️ Roadmap
-
-- Add `og:image` + Twitter card meta
-- Set `site` in `astro.config.mjs` for absolute canonicals
-- Add sitemap + robots
-- Wire real social / contact links
-- Expand project write-ups (MDX case studies)
-
-## 📄 License
-
-MIT
+- 📧 [Email](mailto:a860610@gmail.com)
