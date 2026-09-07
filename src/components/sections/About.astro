@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import { Blocks, Handshake, Sparkles, Sprout } from "lucide-react";
 import BringCard from "@/components/sections/BringCard.astro";
 import SectionTitle from "@/components/sections/SectionTitle.astro";
+import { Badge } from "@/components/ui/badge";
 
 interface BringItem {
   icon: LucideIcon;
@@ -21,6 +22,7 @@ interface Props {
   stat2Label?: string;
   bringHeading?: string;
   bringItems?: BringItem[];
+  skills?: string[];
 }
 
 const {
@@ -56,6 +58,16 @@ const {
       description:
         "Always learning new technologies and improving building skills.",
     },
+  ],
+  skills = [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Redux",
+    "Jest",
+    "Tailwind CSS",
+    "Angular",
+    "Vue.js",
   ],
 } = Astro.props;
 ---
@@ -107,6 +119,16 @@ const {
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="mb-6 flex flex-row flex-wrap gap-2 sm:mb-8 sm:gap-3">
+      {
+        skills.map((skill) => (
+          <Badge variant="outline" className="text-xs md:text-sm ">
+            {skill}
+          </Badge>
+        ))
+      }
     </div>
 
     <p
