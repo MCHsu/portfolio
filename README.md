@@ -1,10 +1,14 @@
-<h1 align="center">Hi, I'm MIN CHIA — Welcome to my portfolio! 👋</h1>
+<h1 align="center">Welcome to MIN CHIA's portfolio!👋</h1>
 
 <h4 align="center">Modern developer portfolio built with Astro & Tailwind v4</h4>
 
-<h3 align="center"> <a href="https://minchia-portfolio.vercel.app/" target="_blank">Live Demo</a> 👀</h3>
+<h3 align="center"> <a href="https://minchia-portfolio.vercel.app/">Live Demo</a>👀</h3>
+
+<br>
 
 ![hero](public/images/readme_hero.png)
+
+<br>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Astro-7?style=for-the-badge&logo=astro&color=F6F4EF" />
@@ -29,9 +33,9 @@
 
 - **Modern Design Tokens:** Configured with Tailwind v4 `@theme` directives and OKLCH color spaces for perceptual uniformity.
 
-- **Performance & a11y:** Built with semantic HTML and accessible ARIA attributes, achieving 95+ scores across all Lighthouse metrics.
+- **Modern Design Tokens:** Centralized design tokens powered by Tailwind v4 `@theme` directives and OKLCH color space.
 
----
+- **Performance & a11y:** Built with semantic HTML and accessible ARIA attributes, achieving 95+ scores across all Lighthouse metrics.
 
 ## 🧰 Tech Stack
 
@@ -40,8 +44,6 @@
 - **Styling:** Tailwind CSS v4, Shadcn UI
 
 - **Motion:** Motion
-
----
 
 ## 🚀 Getting Started
 
@@ -60,10 +62,8 @@ npm install
 npm run dev
 ```
 
----
-
 ## 📫 Contact
 
-- 👩‍💻 [LinkedIn](https://www.linkedin.com/in/min-chia-hsu)
+👩‍💻 [LinkedIn](https://www.linkedin.com/in/min-chia-hsu)
 
-- 📧 [Email](mailto:a860610@gmail.com)
+📧 [Email](mailto:a860610@gmail.com)
