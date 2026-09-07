@@ -1,8 +1,8 @@
-<h1 align="center">Welcome to MIN CHIA's portfolio!👋</h1>
+<h1 align="center">Welcome to MIN CHIA's portfolio! 👋</h1>
 
 <h4 align="center">Modern developer portfolio built with Astro & Tailwind v4</h4>
 
-<h3 align="center"> <a href="https://minchia-portfolio.vercel.app/">Live Demo</a>👀</h3>
+<h3 align="center"> <a href="https://minchia-portfolio.vercel.app/">Live Demo</a> 👀</h3>
 
 <br>
 
@@ -31,19 +31,21 @@
 
 - **Type-Safe Content Layer:** Build-time schema validation via Zod and Astro Content Collections.
 
-- **Modern Design Tokens:** Configured with Tailwind v4 `@theme` directives and OKLCH color spaces for perceptual uniformity.
-
 - **Modern Design Tokens:** Centralized design tokens powered by Tailwind v4 `@theme` directives and OKLCH color space.
 
 - **Performance & a11y:** Built with semantic HTML and accessible ARIA attributes, achieving 95+ scores across all Lighthouse metrics.
 
+---
+
 ## 🧰 Tech Stack
 
-- **Core:** Astro 7, React 19(islands), TypeScript
+- **Core:** Astro 7, React 19 (islands), TypeScript
 
 - **Styling:** Tailwind CSS v4, Shadcn UI
 
 - **Motion:** Motion
+
+---
 
 ## 🚀 Getting Started
 
@@ -61,6 +63,8 @@ npm install
 # Start the dev server
 npm run dev
 ```
+
+---
 
 ## 📫 Contact
 
